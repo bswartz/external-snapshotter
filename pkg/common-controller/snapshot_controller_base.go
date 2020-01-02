@@ -366,9 +366,9 @@ func (ctrl *csiSnapshotCommonController) updateSnapshot(snapshot *crdv1.VolumeSn
 		if errors.IsConflict(err) {
 			// Version conflict error happens quite often and the controller
 			// recovers from it easily.
-			klog.V(3).Infof("could not sync claim %q: %+v", utils.SnapshotKey(snapshot), err)
+			klog.V(3).Infof("could not sync snapshot %q: %+v", utils.SnapshotKey(snapshot), err)
 		} else {
-			klog.Errorf("could not sync volume %q: %+v", utils.SnapshotKey(snapshot), err)
+			klog.Errorf("could not sync snapshot %q: %+v", utils.SnapshotKey(snapshot), err)
 		}
 	}
 }
